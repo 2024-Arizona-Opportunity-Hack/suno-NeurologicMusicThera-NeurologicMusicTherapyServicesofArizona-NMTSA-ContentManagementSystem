@@ -14,7 +14,7 @@
 - [Mrinaal Arora](https://github.com/aroramrinaal)
 - [Yashu Patel](https://github.com/Splendor73)
 - [Raghav Bansal](https://github.com/Raghxv11)
-- [Tanmayi](https://github.com/tanmaayiiiii)
+- [Tanmayi Ghadge](https://github.com/tanmaayiiiii)
 - [Harmit Desai](https://github.com/Harmitdesai)
 <!-- Add all team members -->
 
