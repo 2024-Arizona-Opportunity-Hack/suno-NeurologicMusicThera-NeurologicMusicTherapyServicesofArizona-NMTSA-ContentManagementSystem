@@ -11,16 +11,18 @@
 @Mrinaal Arora (on Slack)
 
 ## Team "suno"
-- [Team Member 1](GitHub profile link)
-- [Team Member 2](GitHub profile link)
-- [Team Member 3](GitHub profile link)
+- [Mrinaal Arora](https://github.com/aroramrinaal)
+- [Yashu Patel](https://github.com/Splendor73)
+- [Raghav Bansal](https://github.com/Raghxv11)
+- [Tanmayi](https://github.com/tanmaayiiiii)
+- [Harmit Desai](https://github.com/Harmitdesai)
 <!-- Add all team members -->
 
 ## Project Overview
 Brief description of your project and its goals.
 
 ## Tech Stack
-- Frontend: 
+- Frontend: Nextjs
 - Backend: 
 - Database: 
 - APIs: 
