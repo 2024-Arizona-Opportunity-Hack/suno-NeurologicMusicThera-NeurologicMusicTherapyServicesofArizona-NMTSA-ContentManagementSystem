@@ -24,7 +24,22 @@ export default function NMTSALandingPage() {
               <p className="text-xl text-gray-700 mb-8">
                 Serving individuals with neurologic impairments and differences since 1982.
               </p>
-              <p className="text-lg text-gray-700">Discover how we're changing lives:</p>
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=J2RM9AGPDLDX6&ssrt=1728796488283"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#f5c242] text-black px-6 py-3 rounded-md hover:bg-[#e5b232] text-lg font-bold transition duration-300"
+                >
+                  DONATE
+                </a>
+                <a
+                  href="#volunteer"  // Replace with actual volunteer page link
+                  className="bg-[#0c2340] text-white px-6 py-3 rounded-md hover:bg-[#0a1c30] text-lg font-bold transition duration-300"
+                >
+                  VOLUNTEER
+                </a>
+              </div>
             </div>
             <div className="md:w-1/2 grid grid-cols-2 gap-4">
               <Image src="/nmtsa1.webp" alt="NMTSA therapy session 1" width={300} height={300} className="rounded-lg" />
