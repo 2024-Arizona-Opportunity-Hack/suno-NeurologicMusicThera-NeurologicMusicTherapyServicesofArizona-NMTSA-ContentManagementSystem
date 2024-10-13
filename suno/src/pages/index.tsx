@@ -27,6 +27,10 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white">
+
+    {/* Audio Player */}
+    <audio src="/background-music.mp3" autoPlay loop controls={false} />
+
       <nav className="bg-white py-2">
         <div className="container mx-auto px-4">
           <div className="flex justify-end items-center space-x-6 mb-2">
@@ -71,13 +75,18 @@ export default function LandingPage() {
               <Link href="#" className="text-black focus:outline-none focus:underline text-base font-semibold">
                 About Us
               </Link>
-              <Link href="#" className="bg-[#f5c242] text-white px-6 py-2 rounded-md hover:bg-[#e5b232] transition-colors focus:outline-none focus:ring-2 focus:ring-[#f5c242] focus:ring-opacity-50 font-bold text-lg uppercase">
+              <a href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=J2RM9AGPDLDX6&ssrt=1728796488283" target='_blank' rel="noopener noreferrer" className="bg-yellow-500 text-white px-6 py-2 rounded-md hover:bg-yellow-400 transition-colors font-bold text-lg uppercase">
                 Donate
-              </Link>
+              </a>
             </div>
           </div>
         </div>
       </nav>
+{/* 
+      <Link href="/ourStory" className="text-black focus:outline-none focus:underline text-base font-semibold">
+  Our Story
+</Link> */}
+
 
       <section className="relative h-[calc(100vh-96px)]">
         {slides.map((slide, index) => (
