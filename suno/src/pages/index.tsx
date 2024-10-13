@@ -158,7 +158,7 @@ export default function NMTSALandingPage() {
               <School className="w-16 h-16 mb-6 text-[#f5c242]" />
               <h3 className="text-2xl font-semibold mb-4">Schools</h3>
               <p className="text-center text-gray-700">
-                Providing therapy services in educational settings to support students' learning and development.
+                Providing therapy services in educational settings to support students&apos; learning and development.
               </p>
             </div>
             <div className="flex flex-col items-center">
