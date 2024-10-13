@@ -5,7 +5,7 @@ import Navbar from '../components/Navbar';
 
 const OurStoryPage = () => {
   return (
-    <div className="min-h-screen bg-white text-gray-800">
+    <div className="min-h-screen bg-white text-gray-800" id="our-story">
       <Navbar />
 
       <main className="container mx-auto px-4 py-12">
