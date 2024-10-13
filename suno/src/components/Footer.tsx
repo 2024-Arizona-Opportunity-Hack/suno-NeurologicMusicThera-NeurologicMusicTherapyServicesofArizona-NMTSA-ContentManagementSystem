@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-between items-center mb-6">
           {/* Logo */}
-          <div className="w-full sm:w-1/4 mb-4 sm:mb-0">
-            <Image src="/logo.png" alt="NMTSA Logo" width={100} height={100} />
+          <div className="w-full sm:w-1/4 mb-4 sm:mb-0 flex justify-center sm:justify-start">
+            <Image src="/logo.png" alt="NMTSA Logo" width={100} height={100} className="w-auto h-auto max-h-20" />
           </div>
 
           {/* Social Media Icons */}
@@ -32,16 +32,16 @@ const Footer = () => {
 
           {/* Email signup */}
           <div className="w-full sm:w-1/4">
-            <h3 className="text-lg font-semibold mb-2">Sign up for updates</h3>
+            <h3 className="text-lg font-semibold mb-2 text-center sm:text-left">Sign up for updates</h3>
             <form className="flex flex-col sm:flex-row">
               <input
                 type="email"
                 placeholder="Email address"
-                className="px-3 py-2 text-sm text-black border border-white rounded-l-md focus:outline-none focus:ring-1 focus:ring-[#f5c242] focus:border-[#f5c242] mb-2 sm:mb-0"
+                className="px-3 py-2 text-sm text-black border border-white rounded-l-md focus:outline-none focus:ring-1 focus:ring-[#f5c242] focus:border-[#f5c242] mb-2 sm:mb-0 w-full sm:w-auto"
               />
               <button
                 type="submit"
-                className="bg-[#f5c242] text-[#0c2340] px-4 py-2 text-sm font-semibold rounded-r-md hover:bg-[#f3b51e]"
+                className="bg-[#f5c242] text-[#0c2340] px-4 py-2 text-sm font-semibold rounded-r-md hover:bg-[#f3b51e] w-full sm:w-auto"
               >
                 Subscribe
               </button>

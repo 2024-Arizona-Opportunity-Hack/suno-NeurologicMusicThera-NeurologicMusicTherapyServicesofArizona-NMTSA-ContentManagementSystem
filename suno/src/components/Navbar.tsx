@@ -1,33 +1,52 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, ChevronDown, Search } from 'lucide-react'
+import { ArrowRight, ChevronDown, Search, Menu, X } from 'lucide-react'
+import { useState } from 'react'
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+
+  const toggleDropdown = (dropdown: string) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
+  }
+
   return (
-    <header className="bg-white py-6">
+    <header className="bg-white py-4 sm:py-6 relative">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <Link href="/">
-          <Image src="/logo.png" alt="NMTSA Logo" width={200} height={70} className="w-auto h-auto" />
+          <Image src="/logo.png" alt="NMTSA Logo" width={200} height={70} className="w-auto h-auto max-h-16" />
         </Link>
-        <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/our-story" className="text-black hover:text-gray-700 text-lg font-semibold">ABOUT US</Link>
-          <div className="relative group">
-            <Link href="#" className="text-black hover:text-gray-700 text-lg font-semibold flex items-center">
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+        <nav className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none z-50 md:items-center space-y-4 md:space-y-0 md:space-x-6`}>
+          <Link href="/our-story" className="block text-black hover:text-gray-700 text-lg font-semibold">ABOUT US</Link>
+          <div className="relative">
+            <button 
+              onClick={() => toggleDropdown('programs')}
+              className="text-black hover:text-gray-700 text-lg font-semibold flex items-center w-full justify-between md:inline-flex md:w-auto"
+            >
               OUR PROGRAMS
               <ChevronDown className="ml-1 w-4 h-4" />
-            </Link>
-            <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+            </button>
+            <div className={`${activeDropdown === 'programs' ? 'block' : 'hidden'} md:absolute md:left-0 mt-2 w-48 bg-white rounded-md shadow-lg md:hidden md:group-hover:block`}>
               <Link href="/videos" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Client Resource Videos</Link>
               <Link href="#program2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Research papers</Link>
               <Link href="#program3" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Blogs</Link>
             </div>
           </div>
-          <div className="relative group">
-            <Link href="#" className="text-black hover:text-gray-700 text-lg font-semibold flex items-center">
+          <div className="relative">
+            <button 
+              onClick={() => toggleDropdown('opportunities')}
+              className="text-black hover:text-gray-700 text-lg font-semibold flex items-center w-full justify-between md:inline-flex md:w-auto"
+            >
               OPPORTUNITIES
               <ChevronDown className="ml-1 w-4 h-4" />
-            </Link>
-            <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+            </button>
+            <div className={`${activeDropdown === 'opportunities' ? 'block' : 'hidden'} md:absolute md:left-0 mt-2 w-48 bg-white rounded-md shadow-lg md:hidden md:group-hover:block`}>
               <Link href="#opportunity1" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Internships</Link>
               <Link href="#opportunity2" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Volunteering</Link>
               <Link href="#opportunity3" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Job Opportunities</Link>
@@ -38,7 +57,7 @@ const Navbar = () => {
             href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=J2RM9AGPDLDX6&ssrt=1728796488283"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-[#f5c242] text-black px-6 py-2 rounded-md hover:bg-[#e5b232] text-lg font-bold transition duration-300"
+            className="bg-[#f5c242] text-black px-4 py-2 rounded-md hover:bg-[#e5b232] text-lg font-bold transition duration-300"
           >
             DONATE
           </a>

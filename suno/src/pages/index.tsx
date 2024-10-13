@@ -9,43 +9,43 @@ export default function NMTSALandingPage() {
     <div className="min-h-screen bg-white text-black">
       <Navbar />
 
-      <main className="container mx-auto px-4 py-12">
+      <main className="container mx-auto px-4 py-8 sm:py-12">
         <motion.section 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="mb-24"
+          className="mb-16 sm:mb-24"
         >
           <div className="flex flex-col md:flex-row items-center">
-            <div className="md:w-1/2 mb-8 md:mb-0">
-              <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">
+            <div className="w-full md:w-1/2 mb-8 md:mb-0">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-4 sm:mb-6">
                 UNLEASHING POTENTIAL THROUGH MUSIC THERAPY
               </h1>
-              <p className="text-2xl text-gray-700 mb-10">
+              <p className="text-xl sm:text-2xl text-gray-700 mb-6 sm:mb-10">
                 Serving individuals with neurologic impairments and differences since 1982.
               </p>
-              <div className="flex space-x-6">
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
                 <a
                   href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=J2RM9AGPDLDX6&ssrt=1728796488283"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-[#f5c242] text-black px-8 py-4 rounded-md hover:bg-[#e5b232] text-xl font-bold transition duration-300"
+                  className="bg-[#f5c242] text-black px-6 py-3 rounded-md hover:bg-[#e5b232] text-lg font-bold transition duration-300 text-center"
                 >
                   DONATE
                 </a>
                 <a
                   href="#volunteer"
-                  className="bg-[#0c2340] text-white px-8 py-4 rounded-md hover:bg-[#0a1c30] text-xl font-bold transition duration-300"
+                  className="bg-[#0c2340] text-white px-6 py-3 rounded-md hover:bg-[#0a1c30] text-lg font-bold transition duration-300 text-center"
                 >
                   VOLUNTEER
                 </a>
               </div>
             </div>
-            <div className="md:w-1/2 grid grid-cols-2 gap-6">
-              <Image src="/nmtsa1.webp" alt="NMTSA therapy session 1" width={400} height={400} className="rounded-lg" />
-              <Image src="/nmtsa2.webp" alt="NMTSA therapy session 2" width={400} height={400} className="rounded-lg" />
-              <Image src="/nmtsa3.webp" alt="NMTSA therapy session 3" width={400} height={400} className="rounded-lg" />
-              <Image src="/nmtsa3.jpeg" alt="NMTSA therapy session 4" width={400} height={400} className="rounded-lg" />
+            <div className="w-full md:w-1/2 grid grid-cols-2 gap-4 sm:gap-6 mt-8 md:mt-0">
+              <Image src="/nmtsa1.webp" alt="NMTSA therapy session 1" width={400} height={400} className="rounded-lg w-full h-auto" />
+              <Image src="/nmtsa2.webp" alt="NMTSA therapy session 2" width={400} height={400} className="rounded-lg w-full h-auto" />
+              <Image src="/nmtsa3.webp" alt="NMTSA therapy session 3" width={400} height={400} className="rounded-lg w-full h-auto" />
+              <Image src="/nmtsa3.jpeg" alt="NMTSA therapy session 4" width={400} height={400} className="rounded-lg w-full h-auto" />
             </div>
           </div>
         </motion.section>
