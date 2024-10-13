@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const OurStoryPage = () => {
   return (
@@ -101,12 +102,7 @@ const OurStoryPage = () => {
         </section>
       </main>
 
-      <footer className="bg-gray-100 mt-24 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-600 mb-2">© 2024 Neurologic Music Therapy Services of Arizona. All rights reserved.</p>
-          <p className="text-gray-600">3221 N 16th Street, Suite 201, Phoenix, AZ 85016 | (602) 840-6410 | info@nmtsa.org</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
