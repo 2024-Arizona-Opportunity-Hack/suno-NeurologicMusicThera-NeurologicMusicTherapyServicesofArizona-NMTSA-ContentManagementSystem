@@ -50,7 +50,7 @@ const OurStoryPage = () => {
             >
               <h2 className="text-4xl font-bold text-[#f5c242]">Our Mission</h2>
               <p className="text-xl text-gray-700 leading-relaxed">
-                We partner with individuals affected by disabilities, harnessing the brain's response to music to build stronger connections between the mind and body.
+                We partner with individuals affected by disabilities, harnessing the brain&apos;s response to music to build stronger connections between the mind and body.
               </p>
             </motion.div>
           </div>
@@ -86,7 +86,7 @@ const OurStoryPage = () => {
                 Since 1982, Neurologic Music Therapy Services of Arizona (NMTSA) has been a beacon of hope, providing transformative services for individuals with neurologic impairments across all ages. We empower families and individuals to achieve breakthroughs using science-backed therapies rooted in music.
               </p>
               <p className="text-xl text-gray-700 leading-relaxed md:max-w-3xl mx-auto">
-                Our team collaborates with top researchers and clinicians worldwide to stay at the forefront of innovation, ensuring the highest quality care and outcomes. NMTSA's evidence-based approach is especially renowned for its work with autism and other neurological conditions.
+                Our team collaborates with top researchers and clinicians worldwide to stay at the forefront of innovation, ensuring the highest quality care and outcomes. NMTSA&apos;s evidence-based approach is especially renowned for its work with autism and other neurological conditions.
               </p>
             </div>
           </motion.div>

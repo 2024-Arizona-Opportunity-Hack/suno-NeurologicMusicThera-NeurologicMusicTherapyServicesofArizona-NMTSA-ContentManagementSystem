@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
 interface VideosProps {
-  items?: any[];
+  items?: string[]; // Changed from any[] to string[]
   active?: number;
 }
 
@@ -13,24 +13,21 @@ const Videos: React.FC<VideosProps> = ({ items = ['Vid 1', 'Vid 2', 'Vid 3', 'Vi
 
   const moveLeft = () => {
     if (items.length === 0) return;
-    let newActive = currentActive - 1;
-    if (newActive < 0) {
-      newActive = items.length - 1;
-    }
+    const newActive = currentActive - 1 < 0 ? items.length - 1 : currentActive - 1;
     setCurrentActive(newActive);
   };
 
   const moveRight = () => {
     if (items.length === 0) return;
-    let newActive = (currentActive + 1) % items.length;
+    const newActive = (currentActive + 1) % items.length;
     setCurrentActive(newActive);
   };
 
   const generateItems = () => {
     if (items.length === 0) return null;
-    let itemList = [];
+    const itemList = [];
     for (let i = currentActive - 1; i <= currentActive + 1; i++) {
-      let index = (i + items.length) % items.length;
+      const index = (i + items.length) % items.length;
       const level = i - currentActive;
       itemList.push(<Item key={index} id={items[index]} level={level} />);
     }
@@ -74,35 +71,41 @@ const Videos: React.FC<VideosProps> = ({ items = ['Vid 1', 'Vid 2', 'Vid 3', 'Vi
 };
 
 interface ItemProps {
-  id: any;
+  id: string; // Changed from any to string
   level: number;
 }
 
 const Item: React.FC<ItemProps> = ({ id, level }) => {
-  const levelStyles: any = {
+  interface LevelStyle {
+    height: number;
+    width: number;
+    bgColor: string;
+    left: string;
+    marginTop: number;
+  }
 
+  const levelStyles: Record<string, LevelStyle> = {
     '-1': {
-      height: 364, // Increased by 1.3 times
-      width: 520, // Increased by 1.3 times
+      height: 364,
+      width: 520,
       bgColor: '#6796E5',
-      left: 'calc(50% - 570px)', // Adjusted for new width and increased gap
+      left: 'calc(50% - 570px)',
       marginTop: 10,
     },
     '0': {
-      height: 416, // Increased by 1.3 times
-      width: 598, // Increased by 1.3 times
+      height: 416,
+      width: 598,
       bgColor: '#4EC9E1',
       left: '50%',
       marginTop: 0,
     },
     '1': {
-      height: 364, // Increased by 1.3 times
-      width: 520, // Increased by 1.3 times
+      height: 364,
+      width: 520,
       bgColor: '#6796E5',
-      left: 'calc(50% + 570px)', // Adjusted for new width and increased gap
+      left: 'calc(50% + 570px)',
       marginTop: 10,
     },
-
   };
 
   const styles = levelStyles[level.toString()] || {};
