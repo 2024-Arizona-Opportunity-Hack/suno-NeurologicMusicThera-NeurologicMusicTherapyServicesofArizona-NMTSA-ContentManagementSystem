@@ -66,21 +66,21 @@ const Admin = () => {
     }
   }
 
-  const generateInviteCode = async () => {
-    const db = getFirestore()
-    const inviteCode = Math.random().toString(36).substring(2, 10).toUpperCase()
-    try {
-      await setDoc(doc(db, 'codes', inviteCode), {
-        code: inviteCode,
-        createdAt: new Date(),
-        used: false
-      })
-      alert(`Invitation code generated: ${inviteCode}`)
-    } catch (error) {
-      console.error('Error generating invite code:', error)
-      alert('Error generating invite code')
-    }
-  }
+  // const generateInviteCode = async () => {
+  //   const db = getFirestore()
+  //   const inviteCode = Math.random().toString(36).substring(2, 10).toUpperCase()
+  //   try {
+  //     await setDoc(doc(db, 'codes', inviteCode), {
+  //       code: inviteCode,
+  //       createdAt: new Date(),
+  //       used: false
+  //     })
+  //     alert(`Invitation code generated: ${inviteCode}`)
+  //   } catch (error) {
+  //     console.error('Error generating invite code:', error)
+  //     alert('Error generating invite code')
+  //   }
+  // }
 
   const logout = () => {
     const auth = getAuth()
@@ -90,14 +90,14 @@ const Admin = () => {
 
   return (
     <div className='text-black mt-4 text-xl pt-12'>
-      <div className="mb-4">
+      {/* <div className="mb-4">
         <button 
           onClick={generateInviteCode} 
           className="bg-purple-500 text-white px-4 py-2 rounded"
         >
           Invite User
         </button>
-      </div>
+      </div> */}
       <table className="min-w-full bg-white border border-gray-300">
         <thead>
           <tr>
@@ -120,7 +120,7 @@ const Admin = () => {
                 <button onClick={() => deleteUser(user.id, user.email)} className="bg-red-500 text-white px-2 py-1 rounded mr-2">
                   Delete User
                 </button>
-                {['admin', 'student', 'instructor'].map(role => (
+                {['Admin', 'Neurologic Music Therapist', 'Patient', 'Parent'].map(role => (
                   <button 
                     key={role}
                     onClick={() => toggleRole(user.id, role)} 

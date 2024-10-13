@@ -15,6 +15,8 @@ const Register = () => {
     const [isLogin, setIsLogin] = useState(false)
     const [isProcessing, setIsProcessing] = useState(false)
     const { userLoggedIn, userData } = useAuth()
+    const [selectedRole, setSelectedRole] = useState('');
+
 
     const onSubmit = async (e) => {
         e.preventDefault()
@@ -29,16 +31,24 @@ const Register = () => {
                     if (password !== confirmPassword) {
                         throw new Error("Passwords don't match")
                     }
-                    await doCreateUserWithEmailAndPassword(email, password)
+
+                    if (!selectedRole) {
+                        throw new Error("Please select a role");
+                    }                    
+
+                   const result = await doCreateUserWithEmailAndPassword(email, password, selectedRole)
+                   if(!result){
+                    return setErrorMessage("Invalid invite code")
+                }
                 }
                 
                 // Successful login/registration
                 if(userData){
-                    if(userData?.roles?.includes("admin")){
-                        navigate('/admin')
-                    }else{
-                        navigate('/home')
-                    }
+if(userData?.roles?.includes("admin")){
+    navigate('/admin')
+}else{
+    navigate('/home')
+}
                 }
             } catch (error) {
                 setErrorMessage(error.message)
@@ -107,6 +117,38 @@ const Register = () => {
                                         className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
                                     />
                                 </div>
+                                <div>
+    <label className="text-sm text-gray-600 font-bold">
+        Select Role
+    </label>
+    <select
+        disabled={isProcessing}
+        required={!isLogin}
+        value={selectedRole}
+        onChange={(e) => setSelectedRole(e.target.value)}
+        className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+    >
+        <option value="">Select Role</option>
+        <option value="Neurologic Music Therapist (NMT®) or professional">Therapist</option>
+        <option value="Patient">Patient</option>
+        <option value="Parent">Parent</option>
+    </select>
+</div>
+
+                                {/* <div>
+                                    <label className="text-sm text-gray-600 font-bold">
+                                        Invitation Code
+                                    </label>
+                                    <input
+                                        disabled={isProcessing}
+                                        type="text"
+                                        autoComplete='off'
+                                        required={!isLogin}
+                                        value={invitationCode} onChange={(e) => { setInvitationCode(e.target.value) }}
+                                        className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg transition duration-300"
+                                    />
+                                </div> */}
+
                             </>
                         )}
 
