@@ -80,7 +80,7 @@ export default function NMTSALandingPage() {
             <Users className="w-16 h-16 mx-auto mb-6 text-[#f5c242]" />
             <h2 className="text-3xl font-bold mb-4">DIVERSE CLIENTELE</h2>
             <p className="text-gray-700 mb-6 text-lg">
-              Serving individuals aged 18 months to 90+ years with various neurologic impairments and differences. Our clients include those with cerebral palsy, Down syndrome, stroke, Parkinson's disease, and more.
+              Serving individuals aged 18 months to 90+ years with various neurologic impairments and differences. Our clients include those with cerebral palsy, Down syndrome, stroke, Parkinson&apos;s disease, and more.
             </p>
             <a href="#" className="text-[#f5c242] hover:text-[#e5b232] flex items-center justify-center text-lg font-semibold">
               Our Impact <ArrowRight className="ml-2 w-5 h-5" />
