@@ -36,7 +36,7 @@ const Home = () => {
                                         navigate(`/${role}`)
                                     }}
                                 >
-                                    Get {role} access
+                                    Get {role} content access
                                 </button>
                             </div>
                         ))

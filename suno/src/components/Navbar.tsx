@@ -14,9 +14,14 @@ const Navbar = () => {
           <Link href="#" className="text-black hover:text-gray-700 text-lg font-semibold">CONTACT</Link>
         </nav>
         <div className="relative">
-          <button className="bg-[#f5c242] text-black px-8 py-3 rounded-md hover:bg-[#e5b232] text-lg font-bold transition duration-300">
+          <a
+            href="https://www.paypal.com/donate/?cmd=_s-xclick&hosted_button_id=J2RM9AGPDLDX6&ssrt=1728796488283"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#f5c242] text-black px-8 py-3 rounded-md hover:bg-[#e5b232] text-lg font-bold transition duration-300"
+          >
             DONATE
-          </button>
+          </a>
           <ArrowRight className="absolute -right-8 top-1/2 transform -translate-y-1/2 w-6 h-6 text-red-500 animate-pulse" />
         </div>
       </div>

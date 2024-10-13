@@ -117,14 +117,14 @@ const Admin = () => {
                 <button onClick={() => resetPassword(user.email)} className="bg-blue-500 text-white px-2 py-1 rounded mr-2">
                   Reset Password
                 </button>
-                <button onClick={() => deleteUser(user.id, user.email)} className="bg-red-500 text-white px-2 py-1 rounded mr-2">
+                <button onClick={() => deleteUser(user.id, user.email)} className="bg-blue-500 text-white px-2 py-1 rounded mr-2">
                   Delete User
                 </button>
                 {['Admin', 'Neurologic Music Therapist', 'Patient', 'Parent'].map(role => (
                   <button 
                     key={role}
                     onClick={() => toggleRole(user.id, role)} 
-                    className={`${user.roles?.includes(role) ? 'bg-green-500' : 'bg-gray-300'} text-white px-2 py-1 rounded mr-2`}
+                    className={`${user.roles?.includes(role) ? 'bg-blue-800' : 'bg-gray-300'} text-white px-2 py-1 rounded mr-2`}
                   >
                     {role}
                   </button>
