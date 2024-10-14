@@ -34,7 +34,7 @@ export default function NMTSALandingPage() {
                   DONATE
                 </a>
                 <a
-                  href="#volunteer"
+                  href="/volunteer"
                   className="bg-[#0c2340] text-white px-6 py-3 rounded-md hover:bg-[#0a1c30] text-lg font-bold transition duration-300 text-center"
                 >
                   VOLUNTEER
